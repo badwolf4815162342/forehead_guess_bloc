@@ -25,19 +25,19 @@ class DeckListIcon extends StatelessWidget {
           height: 50,
           child: InkWell(
             onTap: () => onPressedDeck(index),
-            customBorder: const CircleBorder(
-              side: BorderSide(width: 1, color: fgWarningColor),
-            ),
-            child: FadeInImage(
-                placeholder: MemoryImage(kTransparentImage),
-                image: NetworkImage(deck.image),
-                placeholderErrorBuilder: (context, error, stackTrace) {
-                  return FGImageErrorPlaceholder(text: deck.name);
-                },
-                imageErrorBuilder: (context, error, stackTrace) {
-                  return FGImageErrorPlaceholder(text: deck.name);
-                }),
-            splashColor: Colors.red,
+            child: ClipRRect(
+                borderRadius: BorderRadius.circular(8.0),
+                child: FadeInImage(
+                    fit: BoxFit.cover,
+                    placeholder: MemoryImage(kTransparentImage),
+                    image: NetworkImage(deck.image),
+                    placeholderErrorBuilder: (context, error, stackTrace) {
+                      return FGImageErrorPlaceholder(text: deck.name);
+                    },
+                    imageErrorBuilder: (context, error, stackTrace) {
+                      return FGImageErrorPlaceholder(text: deck.name);
+                    })),
+            splashColor: fgWarningColor,
           ), // Red will correctly spread over gradient
         ));
   }

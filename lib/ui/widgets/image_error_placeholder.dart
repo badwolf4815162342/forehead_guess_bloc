@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../design/fg_design.dart';
+import '../../util/constants.dart';
 
 class FGImageErrorPlaceholder extends StatelessWidget {
   const FGImageErrorPlaceholder({
@@ -14,7 +15,9 @@ class FGImageErrorPlaceholder extends StatelessWidget {
     return Container(
       color: fgWarningColor,
       alignment: Alignment.center,
-      child: FGText.unknownDeckName(text),
+      child: Padding(
+          padding: const EdgeInsets.all(Constant.borderRadiusSmall),
+          child: FGText.unknownDeckName(text)),
     );
   }
 }

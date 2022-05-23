@@ -20,7 +20,7 @@ class Deck {
     words.toString().split(',').forEach((element) {
       wordsList.add(element.trim());
     });
-    wordsList..removeWhere((v) => v == '');
+    wordsList.removeWhere((v) => v == '');
     return Deck(name, path, image, wordsList);
   }
   factory Deck.empty(String path, String name, String image, String words) {

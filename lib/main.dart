@@ -14,8 +14,6 @@ import 'package:forehead_guess/ui/game_overview.page.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:forehead_guess/ui/game_start.page.dart';
 import 'package:flutter/services.dart';
-import 'package:forehead_guess/util/constants.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -59,6 +57,4 @@ class MyApp extends StatelessWidget {
 
 // Todo:
 // Android store
-// github and default decks
 // gelber kasten overview weg
-// runde ecken homescreen

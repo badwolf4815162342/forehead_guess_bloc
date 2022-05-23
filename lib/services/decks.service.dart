@@ -45,11 +45,13 @@ class DecksService extends ChangeNotifier {
       await _initDecksFromAssets(imagePaths).then((value) {
         _isLoading = false;
         notifyListeners();
+        return;
       });
     } else {
-      _initDecksFromLocalFiles(entities).then((value) {
+      await _initDecksFromLocalFiles(entities).then((value) {
         _isLoading = false;
         notifyListeners();
+        return;
       });
     }
   }
@@ -79,6 +81,7 @@ class DecksService extends ChangeNotifier {
       });
     }
     notifyListeners();
+    return;
   }
 
   Future<void> _initDecksFromLocalFiles(List<FileSystemEntity> entities) async {

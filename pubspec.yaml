@@ -90,7 +90,9 @@ flutter:
      - assets/Gilmore_Girls.json
      - assets/Harry_Potter.json
      - assets/Winx_Club.json
-     #- assets/Test_Set.json
+     - assets/Difficult_Words.json
+     - assets/Medium_Words.json
+     - assets/Easy_Words.json
      - assets/sound_correct.mp3
      - assets/sound_incorrect.mp3
      - assets/sound_time_up.mp3

@@ -70,10 +70,13 @@ class _DecksPageState extends ConsumerState<DecksPage> {
         backgroundColor: fgDarkColor,
         body: Center(
           child: ref.watch(decksService).isLoading
-              ? const CircularProgressIndicator(
-                  color: fgDarkColorLight,
-                  strokeWidth: 5,
-                )
+              ? const SizedBox(
+                  height: 40,
+                  width: 40,
+                  child: CircularProgressIndicator(
+                    color: fgBrightColor,
+                    strokeWidth: 5,
+                  ))
               : GridView.count(
                   crossAxisCount: 2,
                   children: List.generate(
