@@ -54,7 +54,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-// Todo:
-// Android store
-// gelber kasten overview weg
