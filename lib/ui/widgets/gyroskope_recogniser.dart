@@ -23,7 +23,6 @@ class FGGyroscopeRecogniser extends ConsumerStatefulWidget {
 }
 
 class _FGGyroscopeRecogniserState extends ConsumerState<FGGyroscopeRecogniser> {
-  final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
   bool _debug = Constant.debugInitialValue;
   int _resultWaitSecondsRoll = Constant.resultWaitSecondsInitialValue;
   int _gyroscopeSensitivity = Constant.gyroscopeSensitivityInitialValue;

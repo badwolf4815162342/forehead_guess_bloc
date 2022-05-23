@@ -44,7 +44,7 @@ class FGResultCard extends ConsumerWidget {
                     topLeft: Radius.circular(Constant.borderRadiusBig),
                     topRight: Radius.circular(Constant.borderRadiusBig))),
             child: Padding(
-                padding: EdgeInsets.all(Constant.paddingResultCard),
+                padding: const EdgeInsets.all(Constant.paddingResultCard),
                 child: Center(
                     child: Column(children: [
                   Row(

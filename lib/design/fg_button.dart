@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:forehead_guess/design/fg_colors.dart';
-import 'package:forehead_guess/design/fg_styles.dart';
 
 import '../util/constants.dart';
 import 'fg_design.dart';
@@ -62,11 +60,11 @@ class FGButton extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   if (leading != null) leading!,
-                  if (leading != null) SizedBox(width: 5),
+                  if (leading != null) const SizedBox(width: 5),
                   FGText.bodyPrimary(title),
                 ],
               )
-            : CircularProgressIndicator(
+            : const CircularProgressIndicator(
                 strokeWidth: 8,
                 valueColor: AlwaysStoppedAnimation(Colors.white),
               ),

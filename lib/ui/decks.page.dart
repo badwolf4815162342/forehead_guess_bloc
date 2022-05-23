@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:forehead_guess/design/fg_design.dart';
 import 'package:forehead_guess/ui/game_overview.page.dart';
 import 'package:forehead_guess/main.dart';
@@ -19,8 +18,6 @@ class DecksPage extends ConsumerStatefulWidget {
 }
 
 class _DecksPageState extends ConsumerState<DecksPage> {
-  final List<String> _decks = [];
-
   onPressedDeck(int index) {
     ref.read(decksService).setCurrentDeck(index);
     Navigator.pushNamed(context, GameOverviewPage.routeName);

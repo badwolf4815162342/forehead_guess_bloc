@@ -37,7 +37,7 @@ class Deck {
   }
 
   void setFileName(String fileName) {
-    this._fileName = fileName;
+    _fileName = fileName;
   }
 
   Deck.fromJson(Map<String, dynamic> json)

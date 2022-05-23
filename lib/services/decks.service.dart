@@ -88,7 +88,7 @@ class DecksService extends ChangeNotifier {
     _decks.clear();
     for (final entity in entities) {
       if (entity is File) {
-        String contents = (entity as File).readAsStringSync();
+        String contents = entity.readAsStringSync();
         Map<String, dynamic> userMap = jsonDecode(contents);
         var deck = Deck.fromJson(userMap);
         // CHECK IF IMAGE IS WORKING
@@ -194,7 +194,7 @@ class DecksService extends ChangeNotifier {
       var set2 = Set.from(_resultWords.keys);
       List<String> wordsToChooseFrom =
           List.from(List.from(set1.difference(set2)));
-      final _random = new Random();
+      final _random = Random();
 
       _currentWord =
           wordsToChooseFrom[_random.nextInt(wordsToChooseFrom.length)];

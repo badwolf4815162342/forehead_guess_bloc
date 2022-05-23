@@ -4,7 +4,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:forehead_guess/ui/widgets/image_error_placeholder.dart';
 import 'package:forehead_guess/util/constants.dart';
 import 'package:transparent_image/transparent_image.dart';
-import '../../design/fg_design.dart';
 import 'empty_placeholder.dart';
 
 class DeckImage extends ConsumerWidget {
@@ -15,7 +14,7 @@ class DeckImage extends ConsumerWidget {
     final Map<String, bool> resultWords =
         ref.watch(decksService).getResultWords();
     return resultWords.isNotEmpty
-        ? EmptyPlaceholder()
+        ? const EmptyPlaceholder()
         : Padding(
             padding: const EdgeInsets.all(Constant.paddingResultCard * 2),
             child: ClipRRect(
