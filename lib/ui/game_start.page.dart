@@ -28,7 +28,7 @@ class _GameStartPageState extends ConsumerState<GameStartPage> {
   }
 
   Future<bool> _onWillPop() {
-    if (MediaQuery.of(context).orientation == Orientation.landscape) {
+    if (MediaQuery.of(context).orientation == Orientation.portrait) {
       SystemChrome.setPreferredOrientations([
         DeviceOrientation.landscapeLeft,
       ]);

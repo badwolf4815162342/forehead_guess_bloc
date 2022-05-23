@@ -29,7 +29,7 @@ class _GameOverviewPageState extends State<GameOverviewPage>
   void initState() {
     super.initState();
     controller =
-        AnimationController(duration: const Duration(seconds: 2), vsync: this);
+        AnimationController(duration: const Duration(seconds: 3), vsync: this);
     animation = Tween<Offset>(
       begin: const Offset(0, 1.5),
       end: Offset.zero,
@@ -40,10 +40,6 @@ class _GameOverviewPageState extends State<GameOverviewPage>
     controller.forward();
   }
 
-  void onReInit() {
-    controller.forward();
-  }
-
   @override
   void dispose() {
     controller.dispose();
@@ -51,8 +47,7 @@ class _GameOverviewPageState extends State<GameOverviewPage>
   }
 
   void startGame() {
-    Navigator.pushNamed(context, GameStartPage.routeName)
-        .then((value) => onReInit());
+    Navigator.pushNamed(context, GameStartPage.routeName);
   }
 
   _openDeckEdit(BuildContext context) {
