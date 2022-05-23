@@ -1,6 +1,6 @@
 # forehead_guess
 
-A new Flutter project.
+Forehead Guess is a small Charades game. You can add your own Charade-Decks with a picture and a list of words to guess. This Application is written in Flutter sdk: ">=2.16.2 <3.0.0".
 
 ## Getting Started
 
