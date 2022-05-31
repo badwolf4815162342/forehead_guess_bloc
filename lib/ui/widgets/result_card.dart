@@ -47,11 +47,14 @@ class FGResultCard extends ConsumerWidget {
                 padding: const EdgeInsets.all(Constant.paddingResultCard),
                 child: Center(
                     child: Column(children: [
+                  FGText.headingOne(
+                    'Results:',
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       FGText.headingOne(
-                        'Results: 😊 ',
+                        '😊 ',
                       ),
                       FGText.resultwordCorrect(
                           '${ref.watch(decksService).getWordCountCorrect()}'),

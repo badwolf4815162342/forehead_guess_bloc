@@ -30,7 +30,7 @@ class DecksService extends ChangeNotifier {
     final dir = Directory(path);
     final List<FileSystemEntity> entities = await dir.list().toList();
 
-    final filteredEntities = List.from(entities)
+    final List<FileSystemEntity> filteredEntities = List.from(entities)
       ..removeWhere((value) => !isGameJson(value));
 
     if (filteredEntities.isEmpty) {
@@ -48,7 +48,7 @@ class DecksService extends ChangeNotifier {
         return;
       });
     } else {
-      await _initDecksFromLocalFiles(entities).then((value) {
+      await _initDecksFromLocalFiles(filteredEntities).then((value) {
         _isLoading = false;
         notifyListeners();
         return;
