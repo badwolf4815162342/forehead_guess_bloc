@@ -11,7 +11,7 @@ import 'package:forehead_guess/ui/widgets/colored_box.dart';
 import 'package:forehead_guess/ui/widgets/empty_placeholder.dart';
 import 'package:forehead_guess/ui/widgets/gyroskope_recogniser.dart';
 import 'package:forehead_guess/ui/widgets/timer.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:forehead_guess/util/shared_prefs.dart';
 
 import '../util/constants.dart';
 
@@ -25,8 +25,6 @@ class GamePage extends StatefulWidget {
 }
 
 class _GamePageState extends State<GamePage> {
-  bool _debug = Constant.debugInitialValue;
-  int _resultWaitSeconds = Constant.resultWaitSecondsInitialValue;
   AudioCache audioCache = AudioCache();
   Widget _wordWidget = const FGCard(
     color: fgDarkColor,
@@ -39,22 +37,11 @@ class _GamePageState extends State<GamePage> {
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.landscapeLeft,
     ]);
-    _loadSharedPrefs();
     _wordWidget = FGCard(
       key: UniqueKey(),
       color: fgDarkColor,
       sideColor: fgDarkColorLight,
     );
-  }
-
-  Future<void> _loadSharedPrefs() async {
-    final prefs = await SharedPreferences.getInstance();
-    setState(() {
-      _debug =
-          (prefs.getBool(Constant.debugString) ?? Constant.debugInitialValue);
-      _resultWaitSeconds = (prefs.getInt(Constant.resultWaitSecondsString) ??
-          Constant.resultWaitSecondsInitialValue);
-    });
   }
 
   void _displayResult(bool correct) {
@@ -79,7 +66,8 @@ class _GamePageState extends State<GamePage> {
         );
       });
     }
-    Timer(Duration(seconds: _resultWaitSeconds), () => {_flipNewCard()});
+    Timer(Duration(seconds: sharedPrefs.timerDurationInSeconds),
+        () => {_flipNewCard()});
   }
 
   void _flipNewCard() {
@@ -164,7 +152,7 @@ class _GamePageState extends State<GamePage> {
               left: 0.0,
               child: FGCloseButton(),
             ),
-            _debug
+            sharedPrefs.debug
                 ? Positioned(
                     bottom: 0, child: FGButtonBar(onGuess: _displayResult))
                 : const EmptyPlaceholder(),

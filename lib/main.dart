@@ -14,9 +14,11 @@ import 'package:forehead_guess/ui/game_overview.page.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:forehead_guess/ui/game_start.page.dart';
 import 'package:flutter/services.dart';
+import 'package:forehead_guess/util/shared_prefs.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await SharedPrefs.init();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
       .then((_) {
     runApp(
@@ -25,7 +27,6 @@ void main() {
   });
 }
 
-//final pointsService = ChangeNotifierProvider((ref) => PointsService());
 final decksService = ChangeNotifierProvider((ref) => DecksService());
 
 class MyApp extends StatelessWidget {
