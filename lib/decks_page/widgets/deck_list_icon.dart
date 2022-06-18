@@ -2,7 +2,7 @@ import 'package:forehead_guess/design/fg_colors.dart';
 import 'package:forehead_guess/ui/widgets/image_error_placeholder.dart';
 import 'package:transparent_image/transparent_image.dart';
 import 'package:flutter/material.dart';
-import '../../models/deck.model.dart';
+import 'package:decks_repository/decks_repository.dart';
 
 class DeckListIcon extends StatelessWidget {
   const DeckListIcon({

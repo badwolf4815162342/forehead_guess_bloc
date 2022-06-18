@@ -1,4 +1,4 @@
-class Deck {
+/**class Deck {
   String _name;
   String _fileName;
   String _image;
@@ -52,4 +52,4 @@ class Deck {
         'image': _image,
         'words': _words.join(',')
       };
-}
+}*/
